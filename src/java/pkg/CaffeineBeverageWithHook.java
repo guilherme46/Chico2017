@@ -1,6 +1,5 @@
 package pkg;
  
-import static java.lang.System.out;
 
 public abstract class CaffeineBeverageWithHook {
  

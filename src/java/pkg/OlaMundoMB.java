@@ -1,9 +1,5 @@
 package pkg;
 
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
@@ -20,13 +16,7 @@ public class OlaMundoMB {
         
         texto.append("<br />")
              .append("Making Coffee...").append(coffeeWithHook.prepareRecipe())
-             .append("Agora são: ")
-             .append(new SimpleDateFormat("hh:mm:ss")
-                     .format(new Date()))
-             .append("<br />")
-             .append("Do dia: ")
-             .append(new SimpleDateFormat("dd-MM-yyyy")
-                     .format(new Date()))
+            
         ;
         return texto;
     }
