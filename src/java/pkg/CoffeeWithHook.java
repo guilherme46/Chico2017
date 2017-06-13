@@ -1,0 +1,51 @@
+
+package pkg;
+ 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import static java.lang.System.out;
+ 
+public class CoffeeWithHook extends CaffeineBeverageWithHook {
+ 
+    @Override
+    protected void addCondiments() {
+        out.println("Adding sugar and milk");
+    }
+ 
+    @Override
+    protected void brew() {
+        out.println("Dripping coffee through filter");
+    }
+ 
+    @Override
+    public boolean customerWantsCondiments() {
+        String answer = getUserInput();
+ 
+        if (answer.toLowerCase().startsWith("y")) {
+            return true;
+        }
+        return false;
+    }
+ 
+    private String getUserInput() {
+        String answer = null;
+ 
+        out.println("Would you like milk and sugar with your coffee (y/n)?");
+ 
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+ 
+        try {
+            answer = in.readLine();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+ 
+        if (answer == null) {
+            return "no";
+        }
+        return answer;
+    }
+
+    
+}
