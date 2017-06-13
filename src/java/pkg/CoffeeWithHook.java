@@ -9,13 +9,13 @@ import static java.lang.System.out;
 public class CoffeeWithHook extends CaffeineBeverageWithHook {
  
     @Override
-    protected void addCondiments() {
-        out.println("Adding sugar and milk");
+    protected String addCondiments() {
+        return ("Adding sugar and milk");
     }
  
     @Override
-    protected void brew() {
-        out.println("Dripping coffee through filter");
+    protected String brew() {
+        return ("Dripping coffee through filter");
     }
  
     @Override

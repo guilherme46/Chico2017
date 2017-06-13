@@ -7,7 +7,7 @@ import java.util.Date;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 
-@Named(value = "olaMundoMB")
+@Named(value = "CoffeeWithHook")
 @Dependent
 public class OlaMundoMB {
      StringBuilder texto = new StringBuilder();
@@ -16,7 +16,10 @@ public class OlaMundoMB {
     }
 
     public StringBuilder getTexto() {
+        CoffeeWithHook coffeeWithHook = new CoffeeWithHook();
+        
         texto.append("<br />")
+             .append("Making Coffee...").append(coffeeWithHook.prepareRecipe())
              .append("Agora são: ")
              .append(new SimpleDateFormat("hh:mm:ss")
                      .format(new Date()))

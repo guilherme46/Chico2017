@@ -4,28 +4,29 @@ import static java.lang.System.out;
 
 public abstract class CaffeineBeverageWithHook {
  
-    final void prepareRecipe() {
+    final String prepareRecipe() {
         boilWater();
         brew();
         pourInCup();
         if (customerWantsCondiments()) {
             addCondiments();
         }
+        return null;
     }
  
-    void pourInCup() {
-        out.println("Pouring into cup");
+    String pourInCup() {
+        return ("Pouring into cup");
     }
  
     boolean customerWantsCondiments() {
         return true;
     }
  
-    protected abstract void addCondiments();
+    protected abstract String addCondiments();
  
-    protected abstract void brew();
+    protected abstract String brew();
  
-    private void boilWater() {
-        out.println("Boiling water");
+    private String boilWater() {
+        return ("Boiling water");
     }
 }
